@@ -1,5 +1,125 @@
 # Technical Context
 
+## Core Technologies
+1. .NET 8
+   - ASP.NET Core Web API
+   - Entity Framework Core
+   - Dependency Injection
+   - Async/Await patterns
+
+2. External Services
+   - OpenWeatherMap API
+   - Redis for caching
+   - Prometheus for metrics
+   - Hangfire for background jobs
+
+3. Security
+   - JWT authentication
+   - Role-based authorization
+   - Rate limiting
+   - HTTPS/TLS
+
+4. Monitoring & Logging
+   - Prometheus metrics
+   - Serilog logging
+   - Health checks
+   - Error tracking
+
+## Development Setup
+1. Required Tools
+   - .NET 8 SDK
+   - Docker Desktop
+   - Redis
+   - Visual Studio 2022 / VS Code
+
+2. Environment Setup
+   ```bash
+   # Start Redis
+   docker run --name redis -p 6379:6379 -d redis
+
+   # Build and run application
+   dotnet build
+   dotnet run
+   ```
+
+3. Configuration
+   - appsettings.json: Application settings
+   - appsettings.Development.json: Development settings
+   - appsettings.Production.json: Production settings
+
+## Dependencies
+1. NuGet Packages
+   - Microsoft.AspNetCore.Authentication.JwtBearer
+   - StackExchange.Redis
+   - Hangfire
+   - Prometheus.NET
+   - Serilog
+   - Serilog.Sinks.Console
+   - Serilog.Sinks.File
+
+2. Development Dependencies
+   - xUnit
+   - Moq
+   - FluentAssertions
+   - Microsoft.NET.Test.Sdk
+
+## Technical Constraints
+1. Performance
+   - Redis caching
+   - Rate limiting
+   - Background jobs
+   - Optimized API calls
+
+2. Security
+   - JWT authentication
+   - Role-based access
+   - HTTPS required
+   - API key protection
+
+3. Monitoring
+   - Prometheus metrics
+   - Health checks
+   - Error tracking
+   - Performance monitoring
+
+4. Scalability
+   - Distributed caching
+   - Background processing
+   - Load balancing ready
+   - Containerized deployment
+
+## API Documentation
+1. Swagger UI
+   - /swagger: API documentation
+   - Authentication support
+   - Request/Response examples
+   - Schema definitions
+
+2. Health Checks
+   - /health: System health
+   - Component status
+   - Detailed diagnostics
+   - Metrics endpoint
+
+3. Monitoring
+   - /metrics: Prometheus metrics
+   - Custom metrics
+   - Performance data
+   - Error rates
+
+## Deployment
+1. Docker Support
+   - Multi-stage builds
+   - Environment configuration
+   - Health checks
+   - Volume mapping
+
+2. CI/CD Ready
+   - GitHub Actions
+   - Docker builds
+   - Automated testing
+   - Deployment scripts
+
 ## Technology Stack
 
 ### Backend Framework

@@ -14,5 +14,6 @@ namespace WeatherForecast.Domain.Interfaces
         Task UpdateAsync(City city);
         Task DeleteAsync(Guid id);
         Task<bool> ExistsAsync(string name);
+        Task<IEnumerable<City>> GetAllAsync();
     }
 } 

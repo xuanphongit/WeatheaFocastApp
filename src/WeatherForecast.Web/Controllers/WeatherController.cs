@@ -7,8 +7,12 @@ using WeatherForecast.Application.Interfaces;
 
 namespace WeatherForecast.Web.Controllers;
 
+/// <summary>
+/// Controller for weather-related operations
+/// </summary>
 [ApiController]
 [Route("api/[controller]")]
+[Produces("application/json")]
 public class WeatherController : ControllerBase
 {
     private readonly IWeatherRepository _weatherRepository;
@@ -25,7 +29,17 @@ public class WeatherController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Gets the current weather for a specific city and country
+    /// </summary>
+    /// <param name="city">The name of the city</param>
+    /// <param name="country">The country code (e.g., US, UK)</param>
+    /// <returns>The current weather information</returns>
+    /// <response code="200">Returns the weather information</response>
+    /// <response code="500">If there was an internal error</response>
     [HttpGet("current/{city}/{country}")]
+    [ProducesResponseType(typeof(Weather), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> GetCurrentWeather(string city, string country)
     {
         try
@@ -41,7 +55,17 @@ public class WeatherController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Gets the weather forecast for a specific city and country
+    /// </summary>
+    /// <param name="city">The name of the city</param>
+    /// <param name="country">The country code (e.g., US, UK)</param>
+    /// <returns>The weather forecast information</returns>
+    /// <response code="200">Returns the forecast information</response>
+    /// <response code="500">If there was an internal error</response>
     [HttpGet("forecast/{city}/{country}")]
+    [ProducesResponseType(typeof(Forecast), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> GetForecast(string city, string country)
     {
         try
@@ -57,7 +81,15 @@ public class WeatherController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Gets a list of all available cities
+    /// </summary>
+    /// <returns>A list of cities</returns>
+    /// <response code="200">Returns the list of cities</response>
+    /// <response code="500">If there was an internal error</response>
     [HttpGet("cities")]
+    [ProducesResponseType(typeof(IEnumerable<City>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> GetCities()
     {
         try

@@ -15,5 +15,6 @@ namespace WeatherForecast.Infrastructure.Repositories
         public Task UpdateAsync(City city) => throw new NotImplementedException();
         public Task DeleteAsync(Guid id) => throw new NotImplementedException();
         public Task<bool> ExistsAsync(string name) => throw new NotImplementedException();
+        public Task<IEnumerable<City>> GetAllAsync() => Task.FromResult<IEnumerable<City>>(new List<City>());
     }
 } 

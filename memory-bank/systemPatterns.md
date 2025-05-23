@@ -1,74 +1,104 @@
-# System Architecture & Patterns
+# System Patterns
 
-## Clean Architecture Overview
-```
-┌─────────────────────────────────────────┐
-│                Web/API                  │  ← Controllers, Views, DTOs
-├─────────────────────────────────────────┤
-│            Application Layer            │  ← Use Cases, Commands, Queries
-├─────────────────────────────────────────┤
-│             Domain Layer                │  ← Entities, Value Objects, Domain Services
-├─────────────────────────────────────────┤
-│          Infrastructure Layer           │  ← Data Access, External APIs, Caching
-└─────────────────────────────────────────┘
-```
+## Architecture Patterns
+1. Clean Architecture
+   - Domain layer: Core business logic and entities
+   - Application layer: Use cases and interfaces
+   - Infrastructure layer: External services and implementations
+   - Web layer: API controllers and middleware
 
-## Project Structure
-```
-WeatherForecast.sln
-├── src/
-│   ├── WeatherForecast.Domain/           # Core business logic
-│   ├── WeatherForecast.Application/      # Use cases và business workflows
-│   ├── WeatherForecast.Infrastructure/   # Data access, external services
-│   └── WeatherForecast.Web/             # MVC controllers, views, APIs
-├── tests/
-│   ├── WeatherForecast.Domain.Tests/
-│   ├── WeatherForecast.Application.Tests/
-│   ├── WeatherForecast.Infrastructure.Tests/
-│   └── WeatherForecast.Web.Tests/
-└── docker/
-    ├── Dockerfile
-    └── docker-compose.yml
-```
+2. Repository Pattern
+   - Abstract data access
+   - Interface-based design
+   - Separation of concerns
+   - Easy testing and mocking
 
-## Key Design Patterns
+3. Service Pattern
+   - Business logic encapsulation
+   - External service integration
+   - Caching strategy
+   - Error handling
 
-### 1. CQRS (Command Query Responsibility Segregation)
-- **Commands**: Thay đổi state (AddFavoriteCity, UpdateUserPreferences)
-- **Queries**: Đọc dữ liệu (GetCurrentWeather, GetForecast)
-- **MediatR**: Mediator pattern cho loose coupling
+## Design Patterns
+1. Caching Strategy
+   - Redis distributed cache
+   - Cache invalidation
+   - Background cache updates
+   - Cache key management
 
-### 2. Repository Pattern
-- **IWeatherRepository**: Abstract data access
-- **ICityRepository**: Quản lý thành phố yêu thích
-- **Unit of Work**: Quản lý transactions
+2. Background Job Pattern
+   - Hangfire job scheduling
+   - Retry policies
+   - Job monitoring
+   - Error handling
 
-### 3. Strategy Pattern
-- **IWeatherProvider**: Cho phép switch giữa các weather APIs
-- **ICacheStrategy**: Các strategy caching khác nhau
+3. Authentication Pattern
+   - JWT token-based auth
+   - Role-based access control
+   - Secure endpoints
+   - Token validation
 
-### 4. Factory Pattern
-- **WeatherProviderFactory**: Tạo weather providers
-- **NotificationFactory**: Tạo các loại thông báo
+4. Monitoring Pattern
+   - Prometheus metrics
+   - Health checks
+   - Logging strategy
+   - Error tracking
 
-## Data Flow
+## Component Relationships
 ```mermaid
 graph TD
-    A[User Request] --> B[Controller]
-    B --> C[MediatR Handler]
-    C --> D[Domain Service]
-    D --> E[Repository]
-    E --> F[Database/Cache]
-    
-    G[External API] --> H[Weather Service]
-    H --> I[Domain Entity]
-    I --> J[Cache]
+    A[Web API] --> B[Controllers]
+    B --> C[Services]
+    C --> D[Repositories]
+    C --> E[External APIs]
+    C --> F[Cache]
+    G[Background Jobs] --> C
+    H[Authentication] --> B
+    I[Metrics] --> A
+    I --> C
 ```
 
-## Dependency Injection Container
-- **Services**: Weather services, notification services
-- **Repositories**: Data access abstractions
-- **Validators**: FluentValidation validators
-- **AutoMapper**: Object mapping profiles
-- **Caching**: Redis distributed cache
-- **Logging**: Serilog configuration 
+## Error Handling
+1. Global Exception Handling
+   - Middleware-based approach
+   - Consistent error responses
+   - Detailed logging
+   - Error tracking
+
+2. Retry Policies
+   - Exponential backoff
+   - Maximum retry attempts
+   - Circuit breaker pattern
+   - Error logging
+
+## Security Patterns
+1. Authentication
+   - JWT token validation
+   - Role-based authorization
+   - Secure endpoints
+   - Token management
+
+2. Rate Limiting
+   - Request throttling
+   - IP-based limiting
+   - User-based limiting
+   - Configurable limits
+
+## Monitoring Patterns
+1. Metrics Collection
+   - API call metrics
+   - Performance metrics
+   - Cache metrics
+   - Error metrics
+
+2. Health Checks
+   - Service health
+   - External API health
+   - Cache health
+   - Background job health
+
+3. Logging Strategy
+   - Structured logging
+   - Log levels
+   - Log aggregation
+   - Error tracking

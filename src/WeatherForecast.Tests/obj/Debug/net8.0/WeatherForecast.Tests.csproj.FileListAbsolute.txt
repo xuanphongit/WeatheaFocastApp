@@ -1,0 +1,7 @@
+D:\Az400\src\WeatherForecast.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_WeatherForecast.Tests
+D:\Az400\src\WeatherForecast.Tests\obj\Debug\net8.0\WeatherForecast.Tests.csproj.AssemblyReference.cache
+D:\Az400\src\WeatherForecast.Tests\obj\Debug\net8.0\WeatherForecast.Tests.GeneratedMSBuildEditorConfig.editorconfig
+D:\Az400\src\WeatherForecast.Tests\obj\Debug\net8.0\WeatherForecast.Tests.AssemblyInfoInputs.cache
+D:\Az400\src\WeatherForecast.Tests\obj\Debug\net8.0\WeatherForecast.Tests.AssemblyInfo.cs
+D:\Az400\src\WeatherForecast.Tests\obj\Debug\net8.0\WeatherForecast.Tests.csproj.CoreCompileInputs.cache
+D:\Az400\src\WeatherForecast.Tests\obj\Debug\net8.0\WeatherForecast.Tests.sourcelink.json
