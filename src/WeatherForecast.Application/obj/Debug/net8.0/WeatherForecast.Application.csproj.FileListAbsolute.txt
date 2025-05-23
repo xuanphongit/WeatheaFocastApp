@@ -1,0 +1,16 @@
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.csproj.AssemblyReference.cache
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.AssemblyInfoInputs.cache
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.AssemblyInfo.cs
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.csproj.CoreCompileInputs.cache
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.sourcelink.json
+D:\Az400\src\WeatherForecast.Application\bin\Debug\net8.0\WeatherForecast.Application.deps.json
+D:\Az400\src\WeatherForecast.Application\bin\Debug\net8.0\WeatherForecast.Application.dll
+D:\Az400\src\WeatherForecast.Application\bin\Debug\net8.0\WeatherForecast.Application.pdb
+D:\Az400\src\WeatherForecast.Application\bin\Debug\net8.0\WeatherForecast.Domain.dll
+D:\Az400\src\WeatherForecast.Application\bin\Debug\net8.0\WeatherForecast.Domain.pdb
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherF.EB3FB60C.Up2Date
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.dll
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\refint\WeatherForecast.Application.dll
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\WeatherForecast.Application.pdb
+D:\Az400\src\WeatherForecast.Application\obj\Debug\net8.0\ref\WeatherForecast.Application.dll

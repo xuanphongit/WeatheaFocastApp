@@ -8,46 +8,12 @@ namespace WeatherForecast.Infrastructure.Repositories
 {
     public class CityRepository : ICityRepository
     {
-        public async Task<City> GetByIdAsync(Guid id)
-        {
-            // TODO: Implement database query
-            throw new NotImplementedException();
-        }
-
-        public async Task<City> GetByNameAsync(string name)
-        {
-            // TODO: Implement database query
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<City>> GetFavoriteCitiesAsync()
-        {
-            // TODO: Implement database query
-            throw new NotImplementedException();
-        }
-
-        public async Task<City> AddAsync(City city)
-        {
-            // TODO: Implement database insert
-            throw new NotImplementedException();
-        }
-
-        public async Task UpdateAsync(City city)
-        {
-            // TODO: Implement database update
-            throw new NotImplementedException();
-        }
-
-        public async Task DeleteAsync(Guid id)
-        {
-            // TODO: Implement database delete
-            throw new NotImplementedException();
-        }
-
-        public async Task<bool> ExistsAsync(string name)
-        {
-            // TODO: Implement database check
-            throw new NotImplementedException();
-        }
+        public Task<City> GetByIdAsync(Guid id) => throw new NotImplementedException();
+        public Task<City> GetByNameAsync(string name) => throw new NotImplementedException();
+        public Task<IEnumerable<City>> GetFavoriteCitiesAsync() => throw new NotImplementedException();
+        public Task<City> AddAsync(City city) => throw new NotImplementedException();
+        public Task UpdateAsync(City city) => throw new NotImplementedException();
+        public Task DeleteAsync(Guid id) => throw new NotImplementedException();
+        public Task<bool> ExistsAsync(string name) => throw new NotImplementedException();
     }
 } 

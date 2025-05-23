@@ -8,13 +8,9 @@ using WeatherForecast.Domain.Interfaces;
 
 namespace WeatherForecast.Application.Features.Weather.Queries
 {
-    public class GetForecastQuery : IRequest<IEnumerable<Forecast>>
-    {
-        public string City { get; set; }
-        public int Days { get; set; } = 5;
-    }
+    public record GetForecastQuery(string City, string Country) : IRequest<WeatherForecast.Domain.Entities.Forecast>;
 
-    public class GetForecastQueryHandler : IRequestHandler<GetForecastQuery, IEnumerable<Forecast>>
+    public class GetForecastQueryHandler : IRequestHandler<GetForecastQuery, WeatherForecast.Domain.Entities.Forecast>
     {
         private readonly IWeatherRepository _weatherRepository;
 
@@ -23,9 +19,9 @@ namespace WeatherForecast.Application.Features.Weather.Queries
             _weatherRepository = weatherRepository;
         }
 
-        public async Task<IEnumerable<Forecast>> Handle(GetForecastQuery request, CancellationToken cancellationToken)
+        public async Task<WeatherForecast.Domain.Entities.Forecast> Handle(GetForecastQuery request, CancellationToken cancellationToken)
         {
-            return await _weatherRepository.GetForecastAsync(request.City, request.Days);
+            return await _weatherRepository.GetForecastAsync(request.City, request.Country);
         }
     }
 } 
